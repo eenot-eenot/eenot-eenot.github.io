@@ -1,0 +1,33 @@
+#reviewsSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--ds);
+    margin: var(--ds);
+}
+
+.review {
+    padding: var(--ds);
+    background-color: var(--bg-pri);
+    border-radius: var(--br);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.review p {
+    margin: 0;
+    margin-bottom: var(--ds);
+}
+
+.review h3 {
+    margin: 0;
+    width: max-content;
+    margin-left: auto;
+    margin-top: auto;
+}
+
+#reviewTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

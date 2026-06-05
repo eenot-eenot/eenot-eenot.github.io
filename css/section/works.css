@@ -1,0 +1,42 @@
+#works {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    gap: var(--ds);
+    margin: var(--ds);
+}
+
+.workContainer {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.workContainer img {
+    width: 100%;
+}
+
+.workInfo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -100%;
+    transition: bottom 0.3s ease;
+
+    padding: var(--ds);
+    margin: var(--ds);
+    background-color: var(--bg-sec-great);
+    border-radius: var(--br);
+}
+
+.workInfo h2 {
+    color: var(--text-pri);
+}
+
+.workInfo p {
+    color: var(--text-pri);
+}
+
+.workContainer:hover .workInfo {
+    bottom: 0;
+    z-index: 500;
+}

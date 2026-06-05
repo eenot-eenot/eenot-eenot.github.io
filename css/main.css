@@ -1,0 +1,76 @@
+html, body {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-sec);
+}
+
+#nav {
+    width: calc(100% - var(--ds) * 2);
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--ds);
+    z-index: 100;
+
+    button {
+        border: 0;
+        background: 0;
+    }
+
+    img {
+        width: 25px;
+    }
+
+    #discordnav {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--dss);
+        border-radius: var(--brc);
+        background-color: #4757c7;
+        padding: var(--dss) var(--ds);
+        font-size: var(--dst);
+        color: var(--text-pri-rev);
+
+        &:hover {
+            background-color: #7482e0;
+            color: var(--text-pri);
+        }
+    }
+
+    #navleft {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--ds);
+
+        font-size: 150%;
+
+        p {
+            margin: 0;
+            color: var(--text-pri-rev);
+        }
+
+        img {
+            width: 45px;
+        }
+    }
+
+    #navcenter a {
+        color: var(--text-pri);
+        font-size: var(--dst);
+        padding: 0 var(--ds);
+        color: var(--text-pri-rev);
+
+        &:hover {
+            color: var(--text-pri-rev-hover);
+        }
+    }
+}
+
+.inline {
+    display: inline-flex;
+    flex-direction: row;
+    gap: var(--dss);
+}

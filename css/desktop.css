@@ -1,0 +1,48 @@
+@media (orientation: landscape) {
+    #navcenter {
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    #nav {
+        position: absolute;
+        top: 0;
+    }
+
+    #content {
+
+        #firstSection {
+            padding-top: 77px;
+            position: relative;
+            height: calc(100dvh - 77px);
+        }
+    }
+
+    #firstSectionName h1 {
+        max-width: 60%;
+    }
+
+    .service {
+        max-width: 70%;
+
+        &:not(.sec) {
+            margin-right: 30%;
+            border-radius: 0 var(--br) var(--br) 0;
+            flex-direction: row;
+            text-align: left;
+        }
+        &.sec {
+            margin-left: 30%;
+            border-radius: var(--br) 0 0 var(--br);
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+
+        .serviceContecnt {
+            min-width: 40%;
+            max-width: 60%;
+            width: max-content;
+        }
+    }
+}

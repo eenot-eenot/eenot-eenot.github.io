@@ -1,0 +1,96 @@
+#contactsWrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    gap: var(--ds2);
+    margin-bottom: var(--ds2);
+}
+
+.contactsInfo {
+    margin-left: var(--ds2);
+    padding: var(--ds);
+    border-radius: var(--br);
+    background-color: var(--bg-pri);
+}
+
+.contactsInfo h2 {
+    font-size: 2rem;
+}
+
+.contactLinks {
+
+}
+
+.contactLinks img:not(.contactOpen) {
+    width: 2rem;
+    filter: invert();
+}
+
+.contactCategory {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ds);
+}
+
+.contactCategory h3 {
+    margin-bottom: 0;
+    color: var(--ac-text);
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: var(--ds);
+
+    position: relative;
+
+    background-color: var(--ac-bg-light);
+    border-radius: var(--brc);
+    padding: var(--dss) var(--ds);
+}
+
+.contactOpen {
+    position: absolute;
+    right: var(--ds);
+}
+
+
+
+.contactsForm {
+    margin-right: var(--ds2);
+    padding: var(--ds);
+    border-radius: var(--br);
+    background-color: var(--bg-pri);
+}
+
+.contactsForm form {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--ds);
+}
+
+.contactsForm form input {
+    border: none;
+    padding: var(--ds);
+}
+
+.contactsForm form textarea {
+    grid-column: 1 / -1;
+    resize: vertical;
+
+    border: none;
+    padding: var(--ds);
+}
+
+.contactsForm form button {
+    grid-column: 1 / -1;
+
+    border: none;
+    font-size: 1.3rem;
+    padding: var(--ds);
+    
+    min-width: 40%;
+    width: 400px;
+    margin: 0 auto;
+
+    background-color: var(--ac-bg);
+}

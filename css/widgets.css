@@ -1,0 +1,9 @@
+.smallSocials {
+    display: flex;
+    flex-direction: row;
+    gap: var(--ds);
+
+    img {
+        width: var(--ds3);
+    }
+}

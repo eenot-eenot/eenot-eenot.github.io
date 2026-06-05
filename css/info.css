@@ -1,0 +1,142 @@
+#firstSection {
+    height: 100dvh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+
+    #firstSectionBg {
+        position: absolute;
+        top: 0;
+        min-width: 100dvw;
+        max-width: 100dvw;
+        height: 100dvh;
+        z-index: -100;
+        display: flex;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            filter: blur(1px);
+            object-fit: cover;
+        }
+    }
+    
+    #firstSectionName {
+        width: max-content;
+        text-align: left;
+        margin-bottom: calc(var(--ds) * 7);
+        margin-left: calc(var(--ds) * 7);
+
+        h1 {
+            font-size: 4.5rem;
+            margin: 0;
+            color: var(--text-pri-rev);
+        }
+        h2 {
+            margin: 0;
+            margin-top: var(--ds);
+            margin-bottom: var(--ds2);
+            color: var(--text-pri-rev);
+            width: max-content;
+        }
+    }
+
+    .firstBtns {
+        display: flex;
+        gap: 5rem;
+        width: max-content;
+    }
+
+    #talkBtn {
+        padding: var(--ds);
+        background-color: var(--ac-bg-great);
+        border-radius: var(--brc);
+        font-size: 1.5rem;
+        color: black;
+
+        display: inline-flex;
+        gap: var(--dss);
+
+        &:hover {
+            background-color: var(--ac-bg-great-hover);
+        }
+
+        svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    #firstSectionRight {
+        /*align-self: center;*/
+        margin-bottom: calc(var(--ds) * 7);
+        margin-top: 10rem;
+
+        p {
+            color: var(--text-pri-rev);
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.sectionH1 {
+    margin: var(--ds3);
+    margin-left: calc(2 * var(--ds3));
+    font-size: 2.5rem;
+}
+
+#processSection {
+
+    .prcessDescr {
+        margin-top: var(--dss);
+        margin-bottom: var(--ds);
+        overflow-y: hidden;
+
+        transition: margin 0.25s, height 0.25s, max-height 0.25s;
+        
+        &:not(.active) {
+            height: 0px;
+            margin-top: 0;
+            margin-bottom: 0;
+            max-height: 0;
+        }
+        &.active {
+            max-height: 5000px;
+        }
+    }
+
+    h2 {
+        margin: 0;
+    }
+
+    #stages {
+        padding: var(--ds);
+        margin: 0 var(--ds) var(--ds) var(--ds);
+        border-radius: var(--br);
+        background-color: var(--bg-pri);
+
+        div {
+            margin-top: var(--ds);
+        }
+
+        button {
+            border: none;
+            background: none;
+
+            svg {
+                transform: rotate(270deg);
+                transition: transform 0.25s;
+            }
+
+
+            &.active {
+
+                svg {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+}

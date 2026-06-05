@@ -1,0 +1,26 @@
+.service {
+    display: flex;
+    justify-content: flex-start;
+    gap: var(--dss);
+
+    background-color: var(--bg-sec-great);
+    margin-bottom: var(--ds);
+
+    padding: var(--ds);
+}
+
+.order {
+    width: max-content;
+    min-width: 200px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--dss);
+
+    background-color: var(--ac-bg);
+    border: 0;
+}
+
+.order:hover {
+    background-color: var(--ac-bg-hover);
+}
