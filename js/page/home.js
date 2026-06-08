@@ -18,7 +18,7 @@ const stages = [
     },
     {
         ru: [
-            "3. Предоплата",
+            "3. Начало работы",
             "После согласования деталей вносится предоплата 50%, после чего начинается работа над проектом."
         ]
     },
@@ -81,33 +81,42 @@ const works = {
         name: 'Saturn - Universal Server',
         link: 'https://saturn-info.github.io',
         type: 'website',
+        desc: 'Многостраничный сайт с каталогом мероприятий, системой достижений и адаптивным интерфейсом.',
     },
     eeditor: {
         name: 'EEditor WS',
         link: 'https://eeditor-ws.vercel.app',
         type: 'webapp',
+        desc: 'Веб-приложение со сложной логикой, локальным хранением данных и продвинутым интерфейсом редактирования.',
     },
     gelt: {
         name: 'GeltGolem - learn programming',
         link: 'https://geltgolem.github.io',
         type: 'landing',
+        desc: 'Лендинг приложения для изучения языков программирования.',
     },
     nwf: {
         name: 'NWF Multiplayer Server',
         link: 'https://nwf-info.github.io',
         type: 'website',
+        desc: 'Сайт игрового сообщества.',
     },
     eeapps: {
         name: 'EE Apps',
         link: 'https://ee-apps.github.io',
         type: 'website',
+        desc: 'Каталог веб-приложений.',
+    },
+    eent: {
+        name: 'New Tab Extension',
+        link: 'https://ee-apps.github.io/home',
+        type: 'browser extension',
+        desc: 'Расширение для Edge/Mozilla заменяющее страницу новой вкладки.',
     },
 }
 
 Object.keys(works).forEach(work => {
     const data = works[work]
-
-
 
     const div = document.createElement('a')
     div.href = data.link
@@ -121,15 +130,98 @@ Object.keys(works).forEach(work => {
     texts.className = 'workInfo'
     div.appendChild(texts)
 
+
+    const headerDiv = document.createElement('div')
+    headerDiv.className = 'workHeader'
+    texts.appendChild(headerDiv)
+
     const title = document.createElement('h2')
     title.textContent = data.name
-    texts.appendChild(title)
+    headerDiv.appendChild(title)
 
     const type = document.createElement('p')
     type.textContent = data.type
-    texts.appendChild(type)
+    headerDiv.appendChild(type)
+
+
+    const desc = document.createElement('p')
+    desc.className = 'workDescription'
+    desc.textContent = data.desc
+    texts.appendChild(desc)
+
 
 
 
     worksContainer.appendChild(div)
+})
+
+
+
+const stackContainer = document.getElementById('abtTechs')
+const stack = {
+    frontend: [
+        'html',
+        'js',
+        'css',
+        'tauri',
+    ],
+    backend: [
+        'node',
+        'sql',
+    ],
+    tools: [
+        'git',
+        'github',
+        'figma',
+    ],
+}
+
+Object.keys(stack).forEach(kind => {
+    const data = stack[kind]
+
+    const head = document.createElement('div')
+    head.className = 'inline'
+
+    const h = document.createElement('h3')
+    h.textContent = kind
+
+    const btn = document.createElement('button')
+    btn.className = 'showTechDesk'
+    btn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.0379 20.3815L7.25991 12.7125C6.86291 12.3205 6.86291 11.6805 7.25991 11.2885L15.0379 3.6185" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>'
+
+    head.appendChild(h)
+    head.appendChild(btn)
+
+    const category = document.createElement('div')
+    category.className = 'stackCategory'
+
+    stackContainer.appendChild(head)
+    stackContainer.appendChild(category)
+    
+    h.addEventListener('click', () => {
+        h.classList.toggle('active')
+        category.classList.toggle('active')
+        btn.classList.toggle('active')
+    })
+    btn.addEventListener('click', () => {
+        h.classList.toggle('active')
+        category.classList.toggle('active')
+        btn.classList.toggle('active')
+    })
+
+    data.forEach(el => {
+        const tech = document.createElement('div')
+        tech.className = 'tech'
+
+        const img = document.createElement('img')
+        img.src = `./img/tech/${el}.svg`
+
+        const p = document.createElement('p')
+        p.textContent = el
+
+        tech.appendChild(img)
+        tech.appendChild(p)
+
+        category.appendChild(tech)
+    })
 })

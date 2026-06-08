@@ -40,3 +40,15 @@
     bottom: 0;
     z-index: 500;
 }
+
+.workHeader {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 2rem);
+    margin: 1rem;
+
+    h2, p {
+        margin: 0;
+    }
+}

@@ -37,6 +37,10 @@
             border-radius: var(--br) 0 0 var(--br);
             flex-direction: row-reverse;
             text-align: right;
+
+            ul {
+                text-align: left;
+            }
         }
 
         .serviceContecnt {

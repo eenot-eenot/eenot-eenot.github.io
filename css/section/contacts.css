@@ -1,6 +1,6 @@
 #contactsWrap {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    grid-template-columns: repeat(2, minmax(600px, 1fr));
     gap: var(--ds2);
     margin-bottom: var(--ds2);
 }
@@ -64,7 +64,7 @@
 
 .contactsForm form {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
     gap: var(--ds);
 }
 
