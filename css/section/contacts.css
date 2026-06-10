@@ -6,7 +6,6 @@
 }
 
 .contactsInfo {
-    margin-left: var(--ds2);
     padding: var(--ds);
     border-radius: var(--br);
     background-color: var(--bg-pri);
@@ -56,7 +55,6 @@
 
 
 .contactsForm {
-    margin-right: var(--ds2);
     padding: var(--ds);
     border-radius: var(--br);
     background-color: var(--bg-pri);

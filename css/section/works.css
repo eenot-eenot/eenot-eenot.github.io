@@ -52,3 +52,9 @@
         margin: 0;
     }
 }
+
+@media (max-width: 1258px) {
+    #works {
+        margin: 0 var(--mgn);
+    }
+}

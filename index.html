@@ -15,8 +15,6 @@
     <link rel="stylesheet" href="eelibs/css/!.css">
     <link rel="stylesheet" href="eelibs/css/notification.css">
 
-    <link rel="stylesheet" href="css/mobile.css">
-    <link rel="stylesheet" href="css/desktop.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/info.css">
     <link rel="stylesheet" href="css/widgets.css">
@@ -25,6 +23,9 @@
     <link rel="stylesheet" href="css/section/about.css">
     <link rel="stylesheet" href="css/section/reviews.css">
     <link rel="stylesheet" href="css/section/contacts.css">
+    
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/desktop.css">
 </head>
 <body>
     <nav id="nav">
@@ -183,7 +184,7 @@
 <br><br>
 Особое внимание уделяю удобству интерфейсов, производительности и поддерживаемости проектов.
 <br><br>
-Помимо разработки отдельных проектов, развиваю собственную дизайн-систему Harno UI для создания более удобных и последовательных интерфейсов.`
+Помимо разработки отдельных проектов, развиваю собственную дизайн-систему Harno UI для создания более удобных и последовательных интерфейсов.
                 </div>
                 <div id="abtTechs">
                     <h2>Технологии</h2>
@@ -194,26 +195,28 @@
             <h1 class="sectionH1">ЧаВо</h1>
         </section>
         <section id="reviewsSection">
-            <div id="reviewTitle"><h1>Отзывы</h1></div>
-            <div class="review">
-                <p class="reviewQuote">I cannot recommend enot enough! He built an easy to edit, clean, and overall awesome website for multiplayer event hosting community and made the whole process incredibly easy. Whenever I needed to tweak things or make updates he was on it right away Super helpful raccoon and an excellent dev. Thanks again for all your help and the awesome website!</p>
-                <h3>Zachary</h3>
+            <div id="reviewTitle"><h1 class="sectionH1">Отзывы</h1></div>
+            <div id="reviewsContainer">
+                <div class="review">
+                    <p class="reviewQuote">I cannot recommend enot enough! He built an easy to edit, clean, and overall awesome website for multiplayer event hosting community and made the whole process incredibly easy. Whenever I needed to tweak things or make updates he was on it right away Super helpful raccoon and an excellent dev. Thanks again for all your help and the awesome website!</p>
+                    <h3>Zachary</h3>
+                </div>
+                <div class="review">
+                    <p class="reviewQuote">Very professional, quick work, clean results</p>
+                    <h3>Adelaide</h3>
+                </div>
+                <div class="review">
+                    <p class="reviewQuote">Обратился к Велесу за созданием сайта для нашего игрового сервера, и это решение полностью себя оправдало. Он отлично понял специфику гейминг-индустрии и задачи нашего сообщества.
+                        <br><br>
+                        После запуска сайта мы заметили резкий скачок популярности проекта, а организация и проведение масштабных мероприятий стали в разы проще благодаря удобному функционалу. Сайт повысил престиж сервера в глазах игроков и помог превлечь новую аудиторию. Рекомендую как надежного специалиста, способного решать сложные задачи.</p>
+                    <h3>Денис</h3>
+                </div>
+                <!--div class="review">
+                    <p class="reviewQuote">Потужно</p>
+                    <h3>Потужняк</h3>
+                    < это заглушка >
+                </div-->
             </div>
-            <div class="review">
-                <p class="reviewQuote">Very professional, quick work, clean results</p>
-                <h3>Adelaide</h3>
-            </div>
-            <div class="review">
-                <p class="reviewQuote">Обратился к Велесу за созданием сайта для нашего игрового сервера, и это решение полностью себя оправдало. Он отлично понял специфику гейминг-индустрии и задачи нашего сообщества.
-<br><br>
-После запуска сайта мы заметили резкий скачок популярности проекта, а организация и проведение масштабных мероприятий стали в разы проще благодаря удобному функционалу. Сайт повысил престиж сервера в глазах игроков и помог превлечь новую аудиторию. Рекомендую как надежного специалиста, способного решать сложные задачи.</p>
-                <h3>Денис</h3>
-            </div>
-            <!--div class="review">
-                <p class="reviewQuote">Потужно</p>
-                <h3>Потужняк</h3>
-                < это заглушка >
-            </div-->
         </section>
         <section id="contactsSection">
             <h1 class="sectionH1">Контакты</h1>
@@ -271,6 +274,14 @@
                                 </div>
                                 <img class="contactOpen" src="img/ui/open.svg">
                             </a>
+                            <a class="contactItem" href="https://www.instagram.com/eenot_eenot/" target="_blank">
+                                <img src="img/social/instagram.svg">
+                                <div>
+                                    <b>Instagram</b>
+                                    <span>@eenot_eenot</span>
+                                </div>
+                                <img class="contactOpen" src="img/ui/open.svg">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -278,10 +289,10 @@
                 <div class="contactsForm">
                     <h2>Написать сообщение</h2>
                     <form>
-                        <input type="text" name="name" placeholder="Ваше имя">
-                        <input type="text" name="contact" placeholder="Telegram / Email">
-                        <textarea name="message" placeholder="Опишите проект..."></textarea>
-                        <button type="submit">Отправить</button>
+                        <input type="text" name="name" placeholder="Ваше имя" id="formName">
+                        <input type="text" name="contact" placeholder="Telegram / Email" id="formContact">
+                        <textarea name="message" placeholder="Опишите проект..." id="formDescr"></textarea>
+                        <button type="submit" id="formSendBtn">Отправить</button>
                     </form>
                 </div>
             </div>
@@ -289,5 +300,6 @@
     </div>
 
     <script src="./js/page/home.js"></script>
+    <script src="./js/discordWebhook.js"></script>
 </body>
 </html>

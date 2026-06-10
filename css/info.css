@@ -82,8 +82,6 @@
 }
 
 .sectionH1 {
-    margin: var(--ds3);
-    margin-left: calc(2 * var(--ds3));
     font-size: 2.5rem;
 }
 
