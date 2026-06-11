@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="eelibs/css/!.css">
     <link rel="stylesheet" href="eelibs/css/notification.css">
 
-    <script src="js/translates.js"></script>
+    <script src="./js/translates.js"></script>
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/info.css">
@@ -34,17 +34,15 @@
 <body>
     <nav id="nav">
         <div id="navleft">
-            <img src="img/icon.svg"><p>Велес Семёнов</p>
+            <img src="img/icon.svg"><p data-i18n="nav.title">Велес Семёнов</p>
         </div>
         <div id="navcenter">
-            <a href="./index.html#firstSection">Главная</a>
-            <a href="#contactsSection">Контакты</a>
-            <a href="#portfoliaSection">Недавние работы</a>
-            <a href="#reviewsSection">Отзывы</a>
-            <a href="#aboutSection">Обо мне</a>
-            <a href="#faqSection">ЧаВо</a>
-            <!--a href="https://ee-apps.github.io">Приложения</a>
-            <a href="https://eenot.gitbook.io/harno-ui">Harno UI</a-->
+            <a href="./index.html#firstSection" data-i18n="nav.home">Главная</a>
+            <a href="#contactsSection" data-i18n="nav.contacts">Контакты</a>
+            <a href="#portfoliaSection" data-i18n="nav.works">Недавние работы</a>
+            <a href="#reviewsSection" data-i18n="nav.reviews">Отзывы</a>
+            <a href="#aboutSection" data-i18n="nav.about">Обо мне</a>
+            <a href="#faqSection" data-i18n="nav.faq">ЧаВо</a>
         </div>
         <a id="discordnav" href="https://discord.gg/PGtxM3dwdD"><img src="img/social/discord.svg">Discord</a>
     </nav>
@@ -52,159 +50,158 @@
         <section id="firstSection">
             <div id="firstSectionBg"><img src="img/bg2 dark.png"></div>
             <div id="firstSectionName">
-                <h1>Разработка веб- сайтов и приложений</h1>
-                <h2 id="firstSectionH2Desktop">Создаю сайты, веб-приложения и Telegram Mini Apps для бизнеса и личных проектов.</h2>
-                <h2 id="firstSectionH2Mobile">Современные сайты и веб-приложения.</h2>
+                <h1 data-i18n="hero.title">Разработка веб-сайтов и приложений</h1>
+                <h2 id="firstSectionH2Desktop" data-i18n="hero.subtitleDesktop">Создаю сайты, веб-приложения и Telegram Mini Apps для бизнеса и личных проектов.</h2>
+                <h2 id="firstSectionH2Mobile" data-i18n="hero.subtitleMobile">Современные сайты и веб-приложения.</h2>
                 <div class="firstBtns">
                     <div class="smallSocials">
                         <a href="https://t.me/eenot_eenot"><img src="img/social/telegram.svg"></a>
                         <a href="https://discord.com/users/794675642037567498"><img src="img/social/discord.svg"></a>
                         <a href="https://github.com/eenot-eenot"><img src="img/social/github.svg"></a>
-                        <!--a href="https://www.youtube.com/@EEHOT"><img src="img/social/youtube.svg"></a-->
                         <a href="mailto:eenot138@gmail.com"><img src="img/social/mail.svg"></a>
                     </div>
-                    <a id="talkBtn" href="https://t.me/eenot_eenot">Обсудить<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.0379 20.3815L7.25991 12.7125C6.86291 12.3205 6.86291 11.6805 7.25991 11.2885L15.0379 3.6185" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <a id="talkBtn" href="https://t.me/eenot_eenot"><span data-i18n="hero.discuss">Обсудить</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.0379 20.3815L7.25991 12.7125C6.86291 12.3205 6.86291 11.6805 7.25991 11.2885L15.0379 3.6185" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                 </div>
             </div>
             <div id="firstSectionRight">
-                <p class="firstSectionPluses">✓ От 50$</p>
-                <p class="firstSectionPluses">✓ От 3 дней</p>
-                <p class="firstSectionPluses">✓ Помогу с хостингом</p>
-                <p class="firstSectionPluses">✓ Поддержка после запуска</p>
+                <p class="firstSectionPluses" data-i18n="hero.plusPrice">✓ От 50$</p>
+                <p class="firstSectionPluses" data-i18n="hero.plusTime">✓ От 3 дней</p>
+                <p class="firstSectionPluses" data-i18n="hero.plusHosting">✓ Помогу с хостингом</p>
+                <p class="firstSectionPluses" data-i18n="hero.plusSupport">✓ Поддержка после запуска</p>
             </div>
         </section>
+
         <section id="pricesSection">
-            <h1 class="sectionH1">Услуги</h1>
+            <h1 class="sectionH1" data-i18n="sections.services">Услуги</h1>
+            
                 <div class="service">
                     <div class="serviceContecnt">
-                        <h1>Сайт-визитка</h1>
+                        <h1 data-i18n="services.vcard.title">Сайт-визитка</h1>
                         <p></p>
                         <ul>
-                            <li>до 5 страниц</li>
-                            <li>адаптивный дизайн</li>
-                            <li>форма обратной связи</li>
+                            <li data-i18n="services.vcard.li1">до 5 страниц</li>
+                            <li data-i18n="services.vcard.li2">адаптивный дизайн</li>
+                            <li data-i18n="services.vcard.li3">форма обратной связи</li>
                         </ul>
-                        <a class="order" href="#contactsSection"><p class="price">от 50$</p><b>Заказать</b></a>
+                        <a class="order" href="#contactsSection"><p class="price" data-i18n="services.vcard.price">от 50$</p><b data-i18n="services.vcard.btn">Заказать</b></a>
                     </div>
                     <div class="serviceIcon">
-                        <!--img src="img/service/test.png"-->
-                        <p>Небольшой сайт для представления компании, организации или специалиста в интернете. Подходит для размещения информации об услугах, контактных данных, примеров работ и другой важной информации.</p>
+                        <p data-i18n="services.vcard.desc">Небольшой сайт для представления компании, организации или специалиста в интернете...</p>
                     </div>
                 </div>
+
                 <div class="service sec">
                     <div class="serviceContecnt">
-                        <h1>Лендинг</h1>
+                        <h1 data-i18n="services.landing.title">Лендинг</h1>
                         <p></p>
                         <ul>
-                            <li>одна страница</li>
-                            <li>анимации</li>
-                            <li>форма обратной связи</li>
+                            <li data-i18n="services.landing.li1">одна страница</li>
+                            <li data-i18n="services.landing.li2">анимации</li>
+                            <li data-i18n="services.landing.li3">форма обратной связи</li>
                         </ul>
-                        <a class="order" href="#contactsSection"><p class="price">от 50$</p><b>Заказать</b></a>
+                        <a class="order" href="#contactsSection"><p class="price" data-i18n="services.landing.price">от 50$</p><b data-i18n="services.landing.btn">Заказать</b></a>
                     </div>
                     <div class="serviceIcon">
-                        <!--img src="img/service/test.png"-->
-                        <p>Одностраничный сайт, предназначенный для продвижения конкретной услуги, продукта или мероприятия. Помогает привлекать клиентов и увеличивать количество заявок.</p>
+                        <p data-i18n="services.landing.desc">Одностраничный сайт, предназначенный для продвижения конкретной услуги...</p>
                     </div>
                 </div>
+
                 <div class="service">
                     <div class="serviceContecnt">
-                        <h1>Многостраничный сайт</h1>
+                        <h1 data-i18n="services.multipage.title">Многостраничный сайт</h1>
                         <p></p>
                         <ul>
-                            <li>индивидуальная структура</li>
-                            <li>неограниченное количество страниц</li>
-                            <li>удобная навигация</li>
+                            <li data-i18n="services.multipage.li1">индивидуальная структура</li>
+                            <li data-i18n="services.multipage.li2">неограниченное количество страниц</li>
+                            <li data-i18n="services.multipage.li3">удобная навигация</li>
                         </ul>
-                        <a class="order" href="#contactsSection"><p class="price">от 100$</p><b>Заказать</b></a>
+                        <a class="order" href="#contactsSection"><p class="price" data-i18n="services.multipage.price">от 100$</p><b data-i18n="services.multipage.btn">Заказать</b></a>
                     </div>
                     <div class="serviceIcon">
-                        <!--img src="img/service/test.png"-->
-                        <p>Полноценный корпоративный сайт с несколькими разделами и удобной структурой. Подходит для компаний, образовательных проектов, организаций и интернет-каталогов.</p>
+                        <p data-i18n="services.multipage.desc">Полноценный корпоративный сайт с несколькими разделами и удобной структурой...</p>
                     </div>
                 </div>
+
                 <div class="service sec">
                     <div class="serviceContecnt">
-                        <h1>Веб-приложение</h1>
+                        <h1 data-i18n="services.webapp.title">Веб-приложение</h1>
                         <p></p>
                         <ul>
-                            <li>личный кабинет</li>
-                            <li>авторизация</li>
-                            <li>взаимодействие с API</li>
-                            <li>работа с базой данных</li>
-                            <li>масштабируемая архитектура</li>
+                            <li data-i18n="services.webapp.li1">личный кабинет</li>
+                            <li data-i18n="services.webapp.li2">авторизация</li>
+                            <li data-i18n="services.webapp.li3">взаимодействие с API</li>
+                            <li data-i18n="services.webapp.li4">работа с базой данных</li>
+                            <li data-i18n="services.webapp.li5">масштабируемая архитектура</li>
                         </ul>
-                        <a class="order" href="#contactsSection"><p class="price">от 200$</p><b>Заказать</b></a>
+                        <a class="order" href="#contactsSection"><p class="price" data-i18n="services.webapp.price">от 200$</p><b data-i18n="services.webapp.btn">Заказать</b></a>
                     </div>
                     <div class="serviceIcon">
-                        <!--img src="img/service/test.png"-->
-                        <p>Разработка сложных веб-систем с личными кабинетами, базами данных и бизнес-логикой. Подходит для CRM-систем, внутренних корпоративных сервисов, панелей управления, сервисов бронирования и других проектов.</p>
+                        <p data-i18n="services.webapp.desc">Разработка сложных веб-систем с личными кабинетами, базами данных...</p>
                     </div>
                 </div>
+
                 <div class="service">
                     <div class="serviceContecnt">
-                        <h1>Telegram Mini App</h1>
+                        <h1 data-i18n="services.tma.title">Telegram Mini App</h1>
                         <p></p>
                         <ul>
-                            <li>адаптация под интерфейс Telegram</li>
-                            <li>авторизация через Telegram</li>
-                            <li>публикация и настройка приложения</li>
+                            <li data-i18n="services.tma.li1">адаптация под интерфейс Telegram</li>
+                            <li data-i18n="services.tma.li2">авторизация через Telegram</li>
+                            <li data-i18n="services.tma.li3">публикация и настройка приложения</li>
                         </ul>
-                        <a class="order" href="#contactsSection"><p class="price">от 150$</p><b>Заказать</b></a>
+                        <a class="order" href="#contactsSection"><p class="price" data-i18n="services.tma.price">от 150$</p><b data-i18n="services.tma.btn">Заказать</b></a>
                     </div>
                     <div class="serviceIcon">
-                        <!--img src="img/service/test.png"-->
-                        <p>Разработка мини-приложений для Telegram, которые работают прямо внутри мессенджера без установки дополнительных программ. Подходит для сервисов, интернет-магазинов, систем бронирования, личных кабинетов и внутренних корпоративных инструментов.</p>
+                        <p data-i18n="services.tma.desc">Разработка мини-приложений для Telegram, которые работают прямо внутри мессенджера...</p>
                     </div>
                 </div>
+
                 <div class="service sec">
                     <div class="serviceContecnt">
-                        <h1>Редизайн сайта</h1>
+                        <h1 data-i18n="services.redesign.title">Редизайн сайта</h1>
                         <p></p>
                         <ul>
-                            <li>обновление дизайна страниц</li>
-                            <li>улучшение навигации и пользовательского опыта</li>
-                            <li>повышение читаемости и привлекательности сайта</li>
+                            <li data-i18n="services.redesign.li1">обновление дизайна страниц</li>
+                            <li data-i18n="services.redesign.li2">улучшение навигации и пользовательского опыта</li>
+                            <li data-i18n="services.redesign.li3">повышение читаемости и привлекательности сайта</li>
                         </ul>
-                        <a class="order" href="#contactsSection"><p class="price">от 150$</p><b>Заказать</b></a>
+                        <a class="order" href="#contactsSection"><p class="price" data-i18n="services.redesign.price">от 150$</p><b data-i18n="services.redesign.btn">Заказать</b></a>
                     </div>
                     <div class="serviceIcon">
-                        <!--img src="img/service/test.png"-->
-                        <p>Обновление внешнего вида и структуры существующего сайта с сохранением или улучшением его функциональности. Помогает сделать сайт современнее, удобнее для пользователей и эффективнее для решения бизнес-задач.</p>
+                        <p data-i18n="services.redesign.desc">Обновление внешнего вида и структуры существующего сайта...</p>
                     </div>
                 </div>
         </section>
+
         <section id="portfoliaSection">
-            <h1 class="sectionH1">Недавние работы</h1>
+            <h1 class="sectionH1" data-i18n="sections.works">Недавние работы</h1>
             <div id="works"></div>
         </section>
+
         <section id="processSection">
-            <h1 class="sectionH1">Как проходит работа</h1>
+            <h1 class="sectionH1" data-i18n="sections.process">Как проходит работа</h1>
             <div id="stages"></div>
         </section>
+
         <section id="aboutSection">
-            <h1 class="sectionH1">Обо мне</h1>
+            <h1 class="sectionH1" data-i18n="sections.about">Обо мне</h1>
             <div id="abtSides">
-                <div id="abtMeText">
-Меня зовут Велес Семёнов, я веб-разработчик.
-<br><br>
-Помогаю создавать удобные и современные цифровые продукты: от простых лендингов и сайтов-визиток до более сложных веб-сервисов.
-<br><br>
-Особое внимание уделяю удобству интерфейсов, производительности и поддерживаемости проектов.
-<br><br>
-Помимо разработки отдельных проектов, развиваю собственную дизайн-систему Harno UI для создания более удобных и последовательных интерфейсов.
+                <div id="abtMeText" data-i18n="html:about.text">
+                    Меня зовут Велес Семёнов, я веб-разработчик...
                 </div>
                 <div id="abtTechs">
-                    <h2>Технологии</h2>
+                    <h2 data-i18n="sections.tech">Технологии</h2>
                 </div>
             </div>
         </section>
+
         <section id="faqSection">
-            <h1 class="sectionH1">ЧаВо</h1>
+            <h1 class="sectionH1" data-i18n="sections.faq">ЧаВо</h1>
             <div id="faqQuestions"></div>
         </section>
+
         <section id="reviewsSection">
-            <div id="reviewTitle"><h1 class="sectionH1">Отзывы</h1></div>
+            <div id="reviewTitle"><h1 class="sectionH1" data-i18n="sections.reviews">Отзывы</h1></div>
             <div id="reviewsContainer">
                 <div class="review">
                     <p class="reviewQuote">I cannot recommend enot enough! He built an easy to edit, clean, and overall awesome website for multiplayer event hosting community and made the whole process incredibly easy. Whenever I needed to tweak things or make updates he was on it right away Super helpful raccoon and an excellent dev. Thanks again for all your help and the awesome website!</p>
@@ -215,28 +212,21 @@
                     <h3>Adelaide</h3>
                 </div>
                 <div class="review">
-                    <p class="reviewQuote">Обратился к Велесу за созданием сайта для нашего игрового сервера, и это решение полностью себя оправдало. Он отлично понял специфику гейминг-индустрии и задачи нашего сообщества.
-                        <br><br>
-                        После запуска сайта мы заметили резкий скачок популярности проекта, а организация и проведение масштабных мероприятий стали в разы проще благодаря удобному функционалу. Сайт повысил престиж сервера в глазах игроков и помог превлечь новую аудиторию. Рекомендую как надежного специалиста, способного решать сложные задачи.</p>
+                    <p class="reviewQuote">Обратился к Велесу за созданием сайта для нашего игрового сервера, и это решение полностью себя оправдало...</p>
                     <h3>Денис</h3>
                 </div>
-                <!--div class="review">
-                    <p class="reviewQuote">Потужно</p>
-                    <h3>Потужняк</h3>
-                    < это заглушка >
-                </div-->
             </div>
         </section>
+
         <section id="contactsSection">
-            <h1 class="sectionH1">Контакты</h1>
+            <h1 class="sectionH1" data-i18n="sections.contacts">Контакты</h1>
             <div id="contactsWrap">
-                <!-- Левый блок: способы связи -->
                 <div class="contactsInfo">
-                    <h2>Связаться со мной</h2>
-                    <p>Выберите удобный способ связи - отвечаю быстро.</p>
+                    <h2 data-i18n="contacts.titleLeft">Связаться со мной</h2>
+                    <p data-i18n="contacts.subtitleLeft">Выберите удобный способ связи - отвечаю быстро.</p>
                     <div class="contactLinks">
                         <div class="contactCategory">
-                            <h3>Мессенджеры</h3>
+                            <h3 data-i18n="contacts.cat1">Мессенджеры</h3>
                             <a class="contactItem" href="https://t.me/eenot_eenot" target="_blank">
                                 <img src="img/social/telegram.svg">
                                 <div>
@@ -257,13 +247,12 @@
                                 <img src="img/social/whatsapp.svg">
                                 <div>
                                     <b>WhatsApp</b>
-                                    <!--span>@eenot_eenot</span-->
                                 </div>
                                 <img class="contactOpen" src="img/ui/open.svg">
                             </a>
                         </div>
                         <div class="contactCategory">
-                            <h3>Email</h3>
+                            <h3 data-i18n="contacts.cat2">Email</h3>
                             <a class="contactItem" href="mailto:eenot138@gmail.com">
                                 <img src="img/social/mail.svg">
                                 <div>
@@ -274,12 +263,12 @@
                             </a>
                         </div>
                         <div class="contactCategory">
-                            <h3>Другое</h3>
+                            <h3 data-i18n="contacts.cat3">Другое</h3>
                             <a class="contactItem" href="https://github.com/eenot-eenot" target="_blank">
                                 <img src="img/social/github.svg">
                                 <div>
                                     <b>GitHub</b>
-                                    <span>Портфолио кода</span>
+                                    <span data-i18n="contacts.githubSub">Портфолио кода</span>
                                 </div>
                                 <img class="contactOpen" src="img/ui/open.svg">
                             </a>
@@ -294,14 +283,13 @@
                         </div>
                     </div>
                 </div>
-                <!-- Правый блок: форма -->
                 <div class="contactsForm">
-                    <h2>Написать сообщение</h2>
-                    <form>
-                        <input type="text" name="name" placeholder="Ваше имя" id="formName">
-                        <input type="text" name="contact" placeholder="Telegram / Email" id="formContact">
-                        <textarea name="message" placeholder="Опишите проект..." id="formDescr"></textarea>
-                        <button type="submit" id="formSendBtn">Отправить</button>
+                    <h2 data-i18n="contacts.titleRight">Написать сообщение</h2>
+                    <form onsubmit="return false;">
+                        <input type="text" name="name" placeholder="Ваше имя" id="formName" data-i18n="placeholder:contacts.namePlaceholder">
+                        <input type="text" name="contact" placeholder="Telegram / Email" id="formContact" data-i18n="placeholder:contacts.contactPlaceholder">
+                        <textarea name="message" placeholder="Опишите проект..." id="formDescr" data-i18n="placeholder:contacts.descrPlaceholder"></textarea>
+                        <button type="submit" id="formSendBtn" data-i18n="contacts.sendBtn">Отправить</button>
                     </form>
                 </div>
             </div>

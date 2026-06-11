@@ -1,321 +1,216 @@
-const stagesContainer = document.getElementById('stages')
-const stages = [
-    {
-        ru: [
-            "1. Обсуждение проекта",
-            "Уточняем цели, задачи и пожелания к будущему сайту. Определяем необходимый функционал, сроки и примерный бюджет проекта."
-        ]
-    },
-    {
-        ru: [
-            "2. Оценка и планирование",
-            "Формирую предложение по проекту, согласовываем структуру сайта, объём работ и этапы реализации."
-        ]
-    },
-    {
-        ru: [
-            "3. Начало работы",
-            "После согласования деталей вносится предоплата 50%, после чего начинается работа над проектом."
-        ]
-    },
-    {
-        ru: [
-            "4. Разработка",
-            "Создаю дизайн и реализую необходимый функционал. На протяжении работы предоставляю промежуточные результаты для ознакомления."
-        ]
-    },
-    {
-        ru: [
-            "5. Демонстрация результата",
-            "Показываю готовый проект и предоставляю доступ для проверки основных функций и содержимого."
-        ]
-    },
-    {
-        ru: [
-            "6. Корректировки и завершение",
-            "Вношу согласованные правки, после чего производится окончательный расчёт и передача проекта."
-        ]
-    },
-]
+// ==================== 1. STAGES ====================
+const stagesContainer = document.getElementById('stages');
+const stagesData = getTranslation('stages') || [];
 
-stages.forEach(stage => {
-    const h = document.createElement('h2')
-    h.textContent = stage[lang][0]
+stagesData.forEach(stage => {
+    const [titleText, descText] = stage;
 
-    const div = document.createElement('div')
-    div.className = 'inline'
+    const h = document.createElement('h2');
+    h.textContent = titleText;
 
-    const p = document.createElement('p')
-    p.className = 'prcessDescr'
-    p.textContent = stage[lang][1]
-    const btn = document.createElement('button')
-    btn.className = 'showStageDesk'
-    btn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.0379 20.3815L7.25991 12.7125C6.86291 12.3205 6.86291 11.6805 7.25991 11.2885L15.0379 3.6185" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    const div = document.createElement('div');
+    div.className = 'inline';
+
+    const p = document.createElement('p');
+    p.className = 'prcessDescr';
+    p.textContent = descText;
+
+    const btn = document.createElement('button');
+    btn.className = 'showStageDesk';
+    btn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.0379 20.3815L7.25991 12.7125C6.86291 12.3205 6.86291 11.6805 7.25991 11.2885L15.0379 3.6185" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     
-    h.addEventListener('click', () => {
-        h.classList.toggle('active')
-        p.classList.toggle('active')
-        btn.classList.toggle('active')
-    })
-    btn.addEventListener('click', () => {
-        h.classList.toggle('active')
-        p.classList.toggle('active')
-        btn.classList.toggle('active')
-    })
+    const toggleActive = () => {
+        h.classList.toggle('active');
+        p.classList.toggle('active');
+        btn.classList.toggle('active');
+    };
 
-    div.appendChild(h)
-    div.appendChild(btn)
-    stagesContainer.appendChild(div)
-    stagesContainer.appendChild(p)
-})
+    h.addEventListener('click', toggleActive);
+    btn.addEventListener('click', toggleActive);
+
+    div.appendChild(h);
+    div.appendChild(btn);
+    stagesContainer.appendChild(div);
+    stagesContainer.appendChild(p);
+});
 
 
-
-const worksContainer = document.getElementById('works')
+// ==================== 2. WORKS ====================
+const worksContainer = document.getElementById('works');
 const works = {
-    saturn: {
-        name: 'Saturn - Universal Server',
-        link: 'https://saturn-info.github.io',
-        type: 'website',
-        desc: 'Многостраничный сайт с каталогом мероприятий, системой достижений и адаптивным интерфейсом.',
-    },
-    eeditor: {
-        name: 'EEditor WS',
-        link: 'https://eeditor-ws.vercel.app',
-        type: 'webapp',
-        desc: 'Веб-приложение со сложной логикой, локальным хранением данных и продвинутым интерфейсом редактирования.',
-    },
-    gelt: {
-        name: 'GeltGolem - learn programming',
-        link: 'https://geltgolem.github.io',
-        type: 'landing',
-        desc: 'Лендинг приложения для изучения языков программирования.',
-    },
-    nwf: {
-        name: 'NWF Multiplayer Server',
-        link: 'https://nwf-info.github.io',
-        type: 'website',
-        desc: 'Сайт игрового сообщества.',
-    },
-/*    eeapps: {
-        name: 'EE Apps',
-        link: 'https://ee-apps.github.io',
-        type: 'website',
-        desc: 'Каталог веб-приложений.',
-    },*/
-    eent: {
-        name: 'New Tab Extension',
-        link: 'https://ee-apps.github.io/home',
-        type: 'browser extension',
-        desc: 'Расширение для Edge/Mozilla заменяющее страницу новой вкладки.',
-    },
-}
+    saturn: { link: 'https://saturn-info.github.io' },
+    eeditor: { link: 'https://eeditor-ws.vercel.app' },
+    gelt: { link: 'https://geltgolem.github.io' },
+    nwf: { link: 'https://nwf-info.github.io' },
+    eent: { link: 'https://ee-apps.github.io/home' },
+};
 
-Object.keys(works).forEach(work => {
-    const data = works[work]
+Object.keys(works).forEach(workKey => {
+    const data = works[workKey];
+    
+    // Получаем переведенные данные для конкретного проекта
+    const name = getTranslation('works', workKey, 'name') || workKey;
+    const typeText = getTranslation('works', workKey, 'type') || '';
+    const descText = getTranslation('works', workKey, 'desc') || '';
 
-    const div = document.createElement('a')
-    div.href = data.link
-    div.className = 'workContainer'
+    const div = document.createElement('a');
+    div.href = data.link;
+    div.className = 'workContainer';
 
-    const img = document.createElement('img')
-    img.src = `examples/${work}/screenshoot.png`
-    div.appendChild(img)
+    const img = document.createElement('img');
+    img.src = `examples/${workKey}/screenshoot.png`;
+    div.appendChild(img);
 
-    const texts = document.createElement('div')
-    texts.className = 'workInfo'
-    div.appendChild(texts)
+    const texts = document.createElement('div');
+    texts.className = 'workInfo';
+    div.appendChild(texts);
+
+    const headerDiv = document.createElement('div');
+    headerDiv.className = 'workHeader';
+    texts.appendChild(headerDiv);
+
+    const title = document.createElement('h2');
+    title.textContent = name;
+    headerDiv.appendChild(title);
+
+    const type = document.createElement('p');
+    type.textContent = typeText;
+    headerDiv.appendChild(type);
+
+    const desc = document.createElement('p');
+    desc.className = 'workDescription';
+    desc.textContent = descText;
+    texts.appendChild(desc);
+
+    worksContainer.appendChild(div);
+});
 
 
-    const headerDiv = document.createElement('div')
-    headerDiv.className = 'workHeader'
-    texts.appendChild(headerDiv)
-
-    const title = document.createElement('h2')
-    title.textContent = data.name
-    headerDiv.appendChild(title)
-
-    const type = document.createElement('p')
-    type.textContent = data.type
-    headerDiv.appendChild(type)
-
-
-    const desc = document.createElement('p')
-    desc.className = 'workDescription'
-    desc.textContent = data.desc
-    texts.appendChild(desc)
-
-
-
-
-    worksContainer.appendChild(div)
-})
-
-
-
-const stackContainer = document.getElementById('abtTechs')
+// ==================== 3. STACK ====================
+const stackContainer = document.getElementById('abtTechs');
 const stack = {
-    frontend: [
-        'html',
-        'js',
-        'css',
-        'tauri',
-    ],
-    backend: [
-        'node',
-        'sql',
-    ],
-    tools: [
-        'git',
-        'github',
-        'figma',
-    ],
-}
+    frontend: ['html', 'js', 'css', 'tauri'],
+    backend: ['node', 'sql'],
+    tools: ['git', 'github', 'figma'],
+};
 
 Object.keys(stack).forEach(kind => {
-    const data = stack[kind]
+    const data = stack[kind];
 
-    const head = document.createElement('div')
-    head.className = 'inline'
+    const head = document.createElement('div');
+    head.className = 'inline';
 
-    const h = document.createElement('h3')
-    h.textContent = kind
+    const h = document.createElement('h3');
+    // Перевод названия категории (frontend -> Фронтенд / Tools -> Інструменти)
+    h.textContent = getTranslation('stack', kind) || kind;
 
-    const btn = document.createElement('button')
-    btn.className = 'showTechDesk'
-    btn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.0379 20.3815L7.25991 12.7125C6.86291 12.3205 6.86291 11.6805 7.25991 11.2885L15.0379 3.6185" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>'
+    const btn = document.createElement('button');
+    btn.className = 'showTechDesk';
+    btn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.0379 20.3815L7.25991 12.7125C6.86291 12.3205 6.86291 11.6805 7.25991 11.2885L15.0379 3.6185" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
 
-    head.appendChild(h)
-    head.appendChild(btn)
+    head.appendChild(h);
+    head.appendChild(btn);
 
-    const category = document.createElement('div')
-    category.className = 'stackCategory'
+    const category = document.createElement('div');
+    category.className = 'stackCategory';
 
-    stackContainer.appendChild(head)
-    stackContainer.appendChild(category)
+    stackContainer.appendChild(head);
+    stackContainer.appendChild(category);
     
-    h.addEventListener('click', () => {
-        h.classList.toggle('active')
-        category.classList.toggle('active')
-        btn.classList.toggle('active')
-    })
-    btn.addEventListener('click', () => {
-        h.classList.toggle('active')
-        category.classList.toggle('active')
-        btn.classList.toggle('active')
-    })
+    const toggleStack = () => {
+        h.classList.toggle('active');
+        category.classList.toggle('active');
+        btn.classList.toggle('active');
+    };
+    h.addEventListener('click', toggleStack);
+    btn.addEventListener('click', toggleStack);
 
     data.forEach(el => {
-        const tech = document.createElement('div')
-        tech.className = 'tech'
+        const tech = document.createElement('div');
+        tech.className = 'tech';
 
-        const img = document.createElement('img')
-        img.src = `./img/tech/${el}.svg`
+        const img = document.createElement('img');
+        img.src = `./img/tech/${el}.svg`;
 
-        const p = document.createElement('p')
-        p.textContent = el
+        const p = document.createElement('p');
+        p.textContent = el;
 
-        tech.appendChild(img)
-        tech.appendChild(p)
+        tech.appendChild(img);
+        tech.appendChild(p);
 
-        category.appendChild(tech)
-    })
-})
+        category.appendChild(tech);
+    });
+});
 
 
+// ==================== 4. FAQ ====================
+const faqContainer = document.getElementById('faqQuestions');
+const faqCategories = ['price', 'time', 'technical', 'work', 'support'];
 
-const faqContainer = document.getElementById('faqQuestions')
-const faq = {
-    price: {
-        'Сколько стоит разработка сайта?': 'Минимальная цена - 50 долларов. В зависимости от объёма и сложности работы, количества и размера правок она может быть выше.',
-        'Что входит в стоимость?': 'Разработка самого сайта, включая дизайн интерфейса и адаптивность под мобильные устройства, размещение на бесплатном хостинге или помощь с размещением на платном, поддержка в течении одного года.',
-        'Есть ли предоплата?': 'Да, есть, и сосотовляет около половины от цены и вносится после показа первоначального наброска. В случае заказа минимального сайта (до 100$), возможна работа без предоплаты.',
-        'Можно ли изменить требования после начала работы?': '',
-        'Какие доступны способы оплаты?': 'Перевод на карту Visa, либо наличкой в долларах, рублях или леях.',
-    },
-    time: {
-        'Сколько времени занимает разработка?': 'Сайт-визитка или лендинг обычно занимает от нескольких дней до двух недель. Многостраничный сайт - от двух недель. Сложные веб-приложения и Telegram Mini Apps могут занимать месяц и более в зависимости от функциональности.',
-        'Можно ли сделать быстрее?': 'В некоторых случаях - да. Стоимость срочной разработки обсуждается отдельно.',
-    },
-    technical: {
-        'Нужно ли самостоятельно покупать домен и хостинг?': 'Могу сделать на бесплатном хостинге и поддомене, но в таком случае ссылка будет вида "https://НазваниеСайта.vercel.app/". Если брать платных хостинг и/или домен - помогу выбрать и настроить.',
-        'Можно ли доработать существующий сайт?': 'В большинстве случаев - да. Зависит от того, какие были использованы технологии при его разработке.',
-        'Будет ли работать сайт на телефонах?': 'Да. Я создаю такой интерфейс, который адаптируется под телефоны, благодаря чему сайт удобно использовать как на компьютерах так и на телефонах.',
-        'Можно ли добавить новые функции после запуска?': 'В течении первого года - небольшие доработки бесплатно; крупные доработки - за некоторую плату в зависимости от объёма и сложности.',
-    },
-    work: {
-        'Как проходит работа над проектом?': '',
-        'Что потребуется от меня?': 'Для начала потребуется кратко описать идею проекта и ваши пожелания. Если у вас уже есть тексты, логотип, фотографии или примеры понравившихся сайтов - это поможет ускорить работу, но не является обязательным.',
-        'Как происходит общение во время работы?': 'Любым удобным для Вас способом из перечисленных: Telegram, Discord, WhatsApp, Instagram, Viber, электронная почта.',
-        'Что делать, если я не разбираюсь в сайтах?': 'Это не проблема. Достаточно рассказать о своём проекте, а с выбором подходящего решения и в технических вопросах я помогу определиться.',
-        'У меня пока нет текстов и фотографий. Можно ли начать работу?': 'Да. Наличие готовых материалов желательно, но не обязательно. Они могут быть добавлены позже, а основные части сайта (структуру и главное содержание) я могу сделать без них.',
-        'Используются ли готовые шаблоны?': 'Нет. Но я использую небольшие не видные пользователю наработки из других своих проектов для ускорения разработки.',
-    },
-    support: {
-        'Можно ли исправить ошибки после сдачи проекта?': 'Да, в течении года исправляю бесплатно.',
-        'Предоставляется ли поддержка после запуска?': 'Да, в течении первого года после сдачи сайта небольшие изменения и исправления ошибок бесплатны.',
-    },
-}
+faqCategories.forEach(category => {
+    const faqData = getTranslation('faqContent', category);
+    if (!faqData) return;
 
-Object.keys(faq).forEach(category => {
-    const catEl = document.createElement('div')
-    catEl.className = 'faqCategory'
+    const catEl = document.createElement('div');
+    catEl.className = 'faqCategory';
 
-    const catContainer = document.createElement('div')
-    catContainer.className = 'faqCategoryContainer'
-    catEl.appendChild(catContainer)
+    const catContainer = document.createElement('div');
+    catContainer.className = 'faqCategoryContainer';
+    catEl.appendChild(catContainer);
     
-    const catH = document.createElement('h2')
-    catH.className = 'faqCategoryName'
-    catH.textContent = translations[lang].faq[category]
+    const catH = document.createElement('h2');
+    catH.className = 'faqCategoryName';
+    catH.textContent = getTranslation('faq', category) || category;
 
-    const btn = document.createElement('button')
-    btn.className = 'showStageDesk'
-    btn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.0379 20.3815L7.25991 12.7125C6.86291 12.3205 6.86291 11.6805 7.25991 11.2885L15.0379 3.6185" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-    catH.appendChild(btn)
+    const btn = document.createElement('button');
+    btn.className = 'showStageDesk';
+    btn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.0379 20.3815L7.25991 12.7125C6.86291 12.3205 6.86291 11.6805 7.25991 11.2885L15.0379 3.6185" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    catH.appendChild(btn);
 
     catH.addEventListener('click', () => {
-        catH.classList.toggle('active')
-        catEl.classList.toggle('active')
-    })
+        catH.classList.toggle('active');
+        catEl.classList.toggle('active');
+    });
 
-    Object.entries(faq[category]).forEach(([que, answ]) => {
-        const queDiv = document.createElement('div')
-        queDiv.className = 'question'
+    Object.entries(faqData).forEach(([que, answ]) => {
+        // Пропускаем вопросы с пустыми ответами
+        if (!answ) return; 
 
-        const queQue = document.createElement('p')
-        queQue.className = 'questionHeader'
-        queQue.textContent = que
+        const queDiv = document.createElement('div');
+        queDiv.className = 'question';
 
-        const btn = document.createElement('button')
-        btn.className = 'showStageDesk'
-        btn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.0379 20.3815L7.25991 12.7125C6.86291 12.3205 6.86291 11.6805 7.25991 11.2885L15.0379 3.6185" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-        queQue.appendChild(btn)
+        const queQue = document.createElement('p');
+        queQue.className = 'questionHeader';
+        queQue.textContent = que;
 
-        const queAnsw = document.createElement('p')
-        queAnsw.className = 'questionAnswer'
-        queAnsw.textContent = answ
+        const qBtn = document.createElement('button');
+        qBtn.className = 'showStageDesk';
+        qBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.0379 20.3815L7.25991 12.7125C6.86291 12.3205 6.86291 11.6805 7.25991 11.2885L15.0379 3.6185" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        queQue.appendChild(qBtn);
 
+        const queAnsw = document.createElement('p');
+        queAnsw.className = 'questionAnswer';
+        queAnsw.textContent = answ;
         
         queDiv.addEventListener('click', () => {
-            queDiv.classList.toggle('active')
-        })
+            queDiv.classList.toggle('active');
+        });
 
-        queDiv.appendChild(queQue)
-        queDiv.appendChild(queAnsw)
-        catContainer.appendChild(queDiv)
-    })
+        queDiv.appendChild(queQue);
+        queDiv.appendChild(queAnsw);
+        catContainer.appendChild(queDiv);
+    });
 
-    faqContainer.appendChild(catH)
-    faqContainer.appendChild(catEl)
-})
+    faqContainer.appendChild(catH);
+    faqContainer.appendChild(catEl);
+});
 
 
-
+// ==================== 5. FORM ====================
 document.getElementById('formSendBtn').addEventListener('click', () => {
     writeMessageInDiscord(`
         Name: ${document.getElementById('formName').value}
         Contact: ${document.getElementById('formContact').value}\n
         Content: ${document.getElementById('formDescr').value}
-    `)
-})
+    `);
+});
