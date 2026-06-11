@@ -59,7 +59,7 @@ body {
 
     #navcenter a {
         color: var(--text-pri);
-        font-size: var(--dst);
+        font-size: var(--ds);
         padding: 0 var(--ds);
         color: var(--text-pri-rev);
 

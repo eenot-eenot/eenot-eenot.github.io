@@ -40,7 +40,11 @@
             margin-top: var(--ds);
             margin-bottom: var(--ds2);
             color: var(--text-pri-rev);
-            width: max-content;
+            
+            width: 100%;
+            text-wrap: auto;
+            word-wrap: break-word;
+            text-wrap-style: balance;
         }
     }
 
@@ -60,8 +64,11 @@
         display: inline-flex;
         gap: var(--dss);
 
+        transition: background 0.3s ease, transform 0.3s ease;
+
         &:hover {
             background-color: var(--ac-bg-great-hover);
+            transform: scale(105%);
         }
 
         svg {
@@ -117,6 +124,7 @@
 
         div {
             margin-top: var(--ds);
+            cursor: pointer;
         }
 
         button {

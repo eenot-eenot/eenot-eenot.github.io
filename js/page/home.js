@@ -1,7 +1,3 @@
-const lang = 'ru'
-
-
-
 const stagesContainer = document.getElementById('stages')
 const stages = [
     {
@@ -260,6 +256,59 @@ const faq = {
         'Предоставляется ли поддержка после запуска?': 'Да, в течении первого года после сдачи сайта небольшие изменения и исправления ошибок бесплатны.',
     },
 }
+
+Object.keys(faq).forEach(category => {
+    const catEl = document.createElement('div')
+    catEl.className = 'faqCategory'
+
+    const catContainer = document.createElement('div')
+    catContainer.className = 'faqCategoryContainer'
+    catEl.appendChild(catContainer)
+    
+    const catH = document.createElement('h2')
+    catH.className = 'faqCategoryName'
+    catH.textContent = translations[lang].faq[category]
+
+    const btn = document.createElement('button')
+    btn.className = 'showStageDesk'
+    btn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.0379 20.3815L7.25991 12.7125C6.86291 12.3205 6.86291 11.6805 7.25991 11.2885L15.0379 3.6185" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    catH.appendChild(btn)
+
+    catH.addEventListener('click', () => {
+        catH.classList.toggle('active')
+        catEl.classList.toggle('active')
+    })
+
+    Object.entries(faq[category]).forEach(([que, answ]) => {
+        const queDiv = document.createElement('div')
+        queDiv.className = 'question'
+
+        const queQue = document.createElement('p')
+        queQue.className = 'questionHeader'
+        queQue.textContent = que
+
+        const btn = document.createElement('button')
+        btn.className = 'showStageDesk'
+        btn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.0379 20.3815L7.25991 12.7125C6.86291 12.3205 6.86291 11.6805 7.25991 11.2885L15.0379 3.6185" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+        queQue.appendChild(btn)
+
+        const queAnsw = document.createElement('p')
+        queAnsw.className = 'questionAnswer'
+        queAnsw.textContent = answ
+
+        
+        queDiv.addEventListener('click', () => {
+            queDiv.classList.toggle('active')
+        })
+
+        queDiv.appendChild(queQue)
+        queDiv.appendChild(queAnsw)
+        catContainer.appendChild(queDiv)
+    })
+
+    faqContainer.appendChild(catH)
+    faqContainer.appendChild(catEl)
+})
 
 
 

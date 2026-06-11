@@ -1,0 +1,21 @@
+@media (max-width: 1300px) {
+    #works {
+        margin: 0 var(--mgn);
+    }
+
+    .contactsForm form {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 975px) {
+    .contactItem div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    
+    .contactsForm form input {
+        width: 100%;
+    }
+}

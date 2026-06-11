@@ -45,6 +45,14 @@
     background-color: var(--ac-bg-light);
     border-radius: var(--brc);
     padding: var(--dss) var(--ds);
+
+    transition: transform 0.15s ease;
+    
+    &:hover {
+        text-decoration: none;
+        transform: scale(105%);
+        background-color: var(--ac-bg-hover);
+    }
 }
 
 .contactOpen {
@@ -91,4 +99,8 @@
     margin: 0 auto;
 
     background-color: var(--ac-bg);
+}
+
+#formSendBtn {
+    text-decoration: none;
 }

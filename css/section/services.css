@@ -16,11 +16,15 @@
     align-items: center;
     justify-content: center;
     gap: var(--dss);
+    border-radius: var(--br);
 
     background-color: var(--ac-bg);
     border: 0;
+
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .order:hover {
     background-color: var(--ac-bg-hover);
+    transform: scale(105%);
 }

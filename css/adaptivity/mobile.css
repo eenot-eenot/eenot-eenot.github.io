@@ -69,4 +69,53 @@
             }
         }
     }
+
+    #firstSectionH2Desktop {
+        display: none;
+    }
+
+    #firstSection {
+        align-items: center;
+        justify-content: center;
+
+        #firstSectionName {
+            margin: var(--ds);
+            width: calc(100dvw - 2 * var(--ds));
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            h1, h2 {
+                text-align: center;
+            }
+
+            .firstBtns {
+                position: absolute;
+                bottom: var(--ds);
+                justify-self: center;
+
+                #talkBtn {
+                    width: max(170px, 60dvw);
+                    justify-content: center;
+                }
+
+                .smallSocials {
+                    display: none;
+                }
+            }
+        }
+
+        #firstSectionRight {
+            display: none;
+        }
+    }
+
+    .review {
+        width: calc(100dvw - 4 * var(--ds));
+    }
+
+    #faqSection {
+        padding: 0 var(--ds);
+    }
 }
