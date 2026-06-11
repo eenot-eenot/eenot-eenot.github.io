@@ -4,7 +4,6 @@
 
 const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
 
-let targetRoute = routes.en;
 let lang = 'en';
 
 if (userLang.startsWith('ru') || userLang.startsWith('be') || userLang.startsWith('kz') || userLang.startsWith('uz')) {
